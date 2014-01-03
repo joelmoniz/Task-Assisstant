@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.joel_harsh.task_assisstant"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/task_assisstant_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.joel_harsh.task_assisstant.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.joel_harsh.task_assisstant.CreateTask"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.CREATETASK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.joel_harsh.task_assisstant.ViewTask"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEWTASK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.joel_harsh.task_assisstant.ModifyTask"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MODIFYTASK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.joel_harsh.task_assisstant.ViewScore"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEWSCORE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.joel_harsh.task_assisstant.DoneTasks"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.DONETASKS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.joel_harsh.task_assisstant.LeftTasks"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.LEFTTASKS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.joel_harsh.task_assisstant.ModifyTasks2"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MODIFYTASKS2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.joel_harsh.task_assisstant.ViewScore2"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEWSCORE2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.joel_harsh.task_assisstant.SQLManager"
+            android:label="@string/title_activity_sqlmanager" >
+        </activity>
+        <activity
+            android:name="com.joel_harsh.task_assisstant.DisplayTaskList"
+            android:label="@string/title_activity_view_task_by_name" >
+        </activity>
+    </application>
+
+</manifest>

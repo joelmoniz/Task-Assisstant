@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+     <TextView
+        android:id="@+id/tVCreatetsk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREATE TASKS" />
+
+    <TextView
+        android:id="@+id/tVtskName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Name :" />
+
+    <EditText
+        android:id="@+id/eTtskname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/tVTskDt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task DeadLine :" />
+
+    <EditText
+        android:id="@+id/eTtskDt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/tVtskPriority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Priority :" />
+
+    <RadioGroup
+        android:id="@+id/rGPr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/rPRhigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:text="High Priority" />
+
+        <RadioButton
+            android:id="@+id/rPRmed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow"
+            android:text=" Medium Priority" />
+
+        <RadioButton
+            android:id="@+id/rPRlow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:text="Low Priority" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/bAddTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD" />
+
+</LinearLayout>

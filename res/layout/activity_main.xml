@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/red"
+    tools:context=".MainActivity" >
+    
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="fill_parent"
+        android:textSize="40dp"
+        android:layout_height="wrap_content"
+        
+        android:textColor="@color/green"
+        
+        android:text="@string/hello_world" />
+
+    <Button
+        android:id="@+id/bVT"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        android:text="View_Task" />
+
+    <Button
+        android:id="@+id/bCT"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        android:text="Create_Task" />
+
+    <Button
+        android:id="@+id/bMT"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+       
+        android:text="Modify_Task" />
+
+    <Button
+        android:id="@+id/bVS"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        android:text="View_Score" />
+
+    
+
+</LinearLayout>

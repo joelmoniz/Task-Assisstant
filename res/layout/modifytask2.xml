@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/bAddNote"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Note" />
+
+    <Button
+        android:id="@+id/bChangeDATEofthistask"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Change Task" />
+
+    <Button
+        android:id="@+id/bChangePriorityoftask"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Change Priority" />
+
+    <Button
+        android:id="@+id/bMARKDone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Mark as Done" />
+
+    <Button
+        android:id="@+id/bREMoveTASk"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="RemoveTask" />
+
+</LinearLayout>

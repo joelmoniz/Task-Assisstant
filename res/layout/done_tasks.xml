@@ -8,25 +8,33 @@
         android:id="@+id/tVDoneTasks"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:text="DONE TASKS" />
+        android:layout_marginLeft="40sp"
+        android:layout_marginTop="70sp"
+        android:text="@string/DONE_TASKS"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/bViewbyName"
-        android:layout_width="fill_parent"
+        android:layout_width="190sp"
         android:layout_height="wrap_content"
-        android:text="View BY Name" />
+        android:layout_marginLeft="60sp"
+        android:layout_marginTop="15sp"
+        android:text="@string/ViewBYName" />
 
     <Button
         android:id="@+id/bViewbydt"
-        android:layout_width="fill_parent"
+        android:layout_width="190sp"
         android:layout_height="wrap_content"
-        android:text="View BY Date" />
+        android:layout_marginLeft="60sp"
+        android:layout_marginTop="5sp"
+        android:text="@string/ViewBYDate" />
 
     <Button
         android:id="@+id/bViewbypr"
-        android:layout_width="fill_parent"
+        android:layout_width="190sp"
         android:layout_height="wrap_content"
-        android:text="View BY Priority" />
+        android:layout_marginLeft="60sp"
+        android:layout_marginTop="5sp"
+        android:text="@string/ViewBYPriority" />
 
 </LinearLayout>

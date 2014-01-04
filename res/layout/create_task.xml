@@ -5,22 +5,24 @@
     android:orientation="vertical" >
     
      <TextView
-        android:id="@+id/tVCreatetsk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CREATE TASKS" />
+         android:id="@+id/tVCreatetsk"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/CREATE_TASKS" />
 
     <TextView
         android:id="@+id/tVtskName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Task Name :" />
+        android:text="@string/TaskName" />
 
     <EditText
         android:id="@+id/eTtskname"
-        android:layout_width="match_parent"
+        android:inputType="text"
+        android:layout_width="240sp"
         android:layout_height="wrap_content"
-        android:ems="10" >
+        android:ems="10" 
+        >
 
         <requestFocus />
     </EditText>
@@ -29,11 +31,11 @@
         android:id="@+id/tVTskDt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Task DeadLine :" />
+        android:text="@string/task_dead" />
 
     <EditText
         android:id="@+id/eTtskDt"
-        android:layout_width="match_parent"
+        android:layout_width="240sp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="date" />
@@ -42,7 +44,7 @@
         android:id="@+id/tVtskPriority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Task Priority :" />
+        android:text="@string/TaskPriority" />
 
     <RadioGroup
         android:id="@+id/rGPr"
@@ -53,28 +55,30 @@
             android:id="@+id/rPRhigh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/red"
-            android:text="High Priority" />
+            android:text="@string/HighPriority"
+            android:textColor="@color/red" />
 
         <RadioButton
             android:id="@+id/rPRmed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/yellow"
-            android:text=" Medium Priority" />
+            android:text="@string/MediumPriority"
+            android:textColor="@color/yellow" />
 
         <RadioButton
             android:id="@+id/rPRlow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/green"
-            android:text="Low Priority" />
+            android:text="@string/LowPriority"
+            android:textColor="@color/green" />
+
     </RadioGroup>
 
     <Button
         android:id="@+id/bAddTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ADD" />
+        android:layout_marginLeft="100sp"
+        android:text="@string/ADD" />
 
 </LinearLayout>

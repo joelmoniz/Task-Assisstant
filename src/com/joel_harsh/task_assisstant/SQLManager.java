@@ -2,6 +2,7 @@ package com.joel_harsh.task_assisstant;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -90,6 +91,35 @@ public class SQLManager extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getWritableDatabase();
 		db.execSQL("DELETE FROM " + StoreConst.TABLENAME);
 	}
+	
+	public long getTasksDoneCount()
+	{
+		
+		SQLiteDatabase db = this.getReadableDatabase();
+		return DatabaseUtils.longForQuery(db, "SELECT count(*) FROM "+StoreConst.TABLENAME+" WHERE "+ StoreConst.STATUS + " = 1", null);
+	}
+	
+	public long getTasksLeftCount()
+	{
+		
+		SQLiteDatabase db = this.getReadableDatabase();
+		return DatabaseUtils.longForQuery(db, "SELECT count(*) FROM "+StoreConst.TABLENAME+" WHERE "+ StoreConst.STATUS + " = 0", null);
+	}
+	
+	public long getTasksDoneOnGivenDayCount(String s)
+	{
+		
+		SQLiteDatabase db = this.getReadableDatabase();
+		return DatabaseUtils.longForQuery(db, "SELECT count(*) FROM "+StoreConst.TABLENAME+" WHERE "+ StoreConst.STATUS + " = 1 AND "+StoreConst.DATE+" = '"+s+"'", null);
+	}
+	
+	public long getTasksLeftOnGivenDayCount(String s)
+	{
+		
+		SQLiteDatabase db = this.getReadableDatabase();
+		return DatabaseUtils.longForQuery(db, "SELECT count(*) FROM "+StoreConst.TABLENAME+" WHERE "+ StoreConst.STATUS + " = 0 AND "+StoreConst.DATE+" = '"+s+"'", null);
+	}
+	
 	/*
 	 * public void clearData() { SQLiteDatabase db = this.getWritableDatabase();
 	 * db.execSQL("UPDATE " + StoreConst.TABLENAME + " SET " +

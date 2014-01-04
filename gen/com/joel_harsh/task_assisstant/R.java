@@ -30,14 +30,13 @@ public final class R {
         public static final int task_assisstant_icon=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f090035;
-        public static final int bAddNote=0x7f090020;
+        public static final int action_settings=0x7f090036;
         public static final int bAddTask=0x7f090010;
         public static final int bCT=0x7f090003;
         public static final int bChangeDATEofthistask=0x7f090021;
         public static final int bChangePriorityoftask=0x7f090022;
-        public static final int bDoneTasks=0x7f090032;
-        public static final int bLeftTasks=0x7f090033;
+        public static final int bDoneTasks=0x7f090033;
+        public static final int bLeftTasks=0x7f090034;
         public static final int bMARKDone=0x7f090023;
         public static final int bMT=0x7f090004;
         public static final int bOpenTASK=0x7f09001f;
@@ -51,17 +50,18 @@ public final class R {
         public static final int bViewbydtlft=0x7f090017;
         public static final int bViewbypr=0x7f090014;
         public static final int bViewbyprlft=0x7f090018;
+        public static final int button1=0x7f09002e;
         public static final int eTcurrentScore=0x7f090026;
         public static final int eTtaskDonepercent=0x7f090028;
         public static final int eTtaskleftpercent=0x7f09002a;
-        public static final int eTtodaysDone=0x7f09002f;
-        public static final int eTtodaysleft=0x7f090031;
+        public static final int eTtodaysDone=0x7f090030;
+        public static final int eTtodaysleft=0x7f090032;
         public static final int eTtskDt=0x7f09000a;
         public static final int eTtskname=0x7f090008;
         public static final int etDAte=0x7f09002d;
         public static final int linearLayout1=0x7f090019;
         public static final int listview=0x7f090000;
-        public static final int menu_settings=0x7f090034;
+        public static final int menu_settings=0x7f090035;
         public static final int rGPr=0x7f09000c;
         public static final int rPRhigh=0x7f09000d;
         public static final int rPRlow=0x7f09000f;
@@ -76,10 +76,11 @@ public final class R {
         public static final int tVTskDt=0x7f090009;
         public static final int tVchooseTask=0x7f09001d;
         public static final int tVleftTasks=0x7f090015;
-        public static final int tVtodaysdone=0x7f09002e;
-        public static final int tVtodaysleft=0x7f090030;
+        public static final int tVtodaysdone=0x7f09002f;
+        public static final int tVtodaysleft=0x7f090031;
         public static final int tVtskName=0x7f090007;
         public static final int tVtskPriority=0x7f09000b;
+        public static final int textView1=0x7f090020;
         public static final int tvDate=0x7f09001b;
         public static final int tvHeading=0x7f090001;
         public static final int tvName=0x7f09001a;
@@ -105,15 +106,50 @@ public final class R {
         public static final int view_task_by_name=0x7f080002;
     }
     public static final class string {
+        public static final int ADD=0x7f06001d;
+        public static final int CREATE_TASKS=0x7f060017;
+        public static final int ChangePriority=0x7f060028;
+        public static final int ChangeTask=0x7f060027;
+        public static final int Create_Task=0x7f060014;
+        public static final int DONE_TASKS=0x7f06001f;
+        public static final int DoneTasks=0x7f060025;
+        public static final int HighPriority=0x7f06001a;
+        public static final int LeftTasks=0x7f060026;
+        public static final int LowPriority=0x7f06001c;
+        public static final int MediumPriority=0x7f06001b;
+        public static final int Modify_Task=0x7f060015;
+        public static final int OK=0x7f06000e;
+        public static final int RemoveTask=0x7f06002a;
+        public static final int TO_DO=0x7f060023;
+        public static final int TaskName=0x7f060018;
+        public static final int TaskPriority=0x7f06001e;
+        public static final int ViewBYDate=0x7f060021;
+        public static final int ViewBYName=0x7f060020;
+        public static final int ViewBYPriority=0x7f060022;
+        public static final int View_Score=0x7f060016;
+        public static final int View_Task=0x7f060013;
         public static final int action_settings=0x7f060004;
         public static final int app_name=0x7f060000;
+        public static final int choosetask=0x7f060012;
+        public static final int curresc=0x7f060009;
+        public static final int date=0x7f06000d;
+        public static final int done=0x7f060029;
         public static final int first=0x7f060006;
+        public static final int gototask=0x7f060011;
         public static final int hello_world=0x7f060001;
         public static final int menu_settings=0x7f060002;
+        public static final int partdatetask=0x7f06000c;
         public static final int second=0x7f060007;
+        public static final int task_dead=0x7f060019;
+        public static final int taskdone=0x7f06000f;
+        public static final int taskleft=0x7f060010;
         public static final int third=0x7f060008;
         public static final int title_activity_sqlmanager=0x7f060003;
         public static final int title_activity_view_task_by_name=0x7f060005;
+        public static final int tottaskdone=0x7f06000a;
+        public static final int tottaskleft=0x7f06000b;
+        public static final int whattodo=0x7f06002b;
+        public static final int which=0x7f060024;
     }
     public static final class style {
         /** 

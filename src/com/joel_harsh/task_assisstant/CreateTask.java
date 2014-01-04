@@ -66,8 +66,6 @@ public class CreateTask extends Activity implements OnClickListener,
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
 
-		SQLManager manager = SQLManager.createObject(getApplicationContext());
-
 		String rId=null;
 		switch (rg.getCheckedRadioButtonId()) {
 		case R.id.rPRhigh:

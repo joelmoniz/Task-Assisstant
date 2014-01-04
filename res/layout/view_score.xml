@@ -6,49 +6,56 @@
 
     <TextView
         android:id="@+id/tVCurrentScore"
-        android:textSize="22dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Current Score : " />
+        android:layout_marginTop="20sp"
+        android:text="@string/curresc"
+        android:textSize="22sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/eTcurrentScore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" >
+        android:ems="10"
+        android:textSize="22sp" >
 
         <requestFocus />
-    </EditText>
-    
-	<TextView
+    </TextView>
+
+    <TextView
         android:id="@+id/tVTaskDonepercentage"
         android:layout_width="wrap_content"
-         android:textSize="22dp"
         android:layout_height="wrap_content"
-        android:text="Total Tasks Done : " />
-    <EditText
+        android:text="@string/tottaskdone"
+        android:textSize="22sp" />
+
+    <TextView
         android:id="@+id/eTtaskDonepercent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" />
+        android:ems="10"
+        android:textSize="22sp" />
 
     <TextView
         android:id="@+id/tVTasksleftpercent"
         android:layout_width="wrap_content"
-         android:textSize="22dp"
         android:layout_height="wrap_content"
-        android:text="Total Tasks Left : " />
+        android:text="@string/tottaskleft"
+        android:textSize="22sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/eTtaskleftpercent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" />
+        android:ems="10"
+        android:textSize="22sp" />
 
     <Button
         android:id="@+id/bVSDate"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Particular Date Tasks" />
+        android:layout_marginLeft="50sp"
+        android:text="@string/partdatetask"
+        android:textSize="18sp" />
 
 </LinearLayout>

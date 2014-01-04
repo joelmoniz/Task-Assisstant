@@ -4,34 +4,41 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/bAddNote"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Note" />
+        android:text="@string/whattodo"
+        android:layout_marginTop="20sp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
         android:id="@+id/bChangeDATEofthistask"
-        android:layout_width="fill_parent"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
-        android:text="Change Task" />
+        android:layout_marginLeft="90sp"
+        android:layout_marginTop="20sp"
+        android:text="@string/ChangeTask" />
 
     <Button
         android:id="@+id/bChangePriorityoftask"
-        android:layout_width="fill_parent"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
-        android:text="Change Priority" />
+        android:layout_marginLeft="90sp"
+        android:text="@string/ChangePriority" />
 
     <Button
         android:id="@+id/bMARKDone"
-        android:layout_width="fill_parent"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
-        android:text="Mark as Done" />
+        android:layout_marginLeft="90sp"
+        android:text="@string/done" />
 
     <Button
         android:id="@+id/bREMoveTASk"
-        android:layout_width="fill_parent"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
-        android:text="RemoveTask" />
+        android:layout_marginLeft="90sp"
+        android:text="@string/RemoveTask" />
 
 </LinearLayout>

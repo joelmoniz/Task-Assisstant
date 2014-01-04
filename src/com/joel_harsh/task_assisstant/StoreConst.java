@@ -15,5 +15,5 @@ public class StoreConst {
 			+ " );";
 	public static final String SortBy = "DataBaseSortingOrder";
 	public static final String DoStatus = "Do_Status";
-
+	public static final String Store = "stored_String";
 }

@@ -4,20 +4,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/which"
+        android:layout_marginLeft="3sp"
+        android:layout_marginTop="15sp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <Button
         android:id="@+id/bDoneTasks"
-        android:layout_width="fill_parent"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:padding="03dp"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:text="DoneTasks" />
+        android:layout_marginLeft="40sp"
+        android:layout_marginTop="10dp"
+        android:padding="03dp"
+        android:text="@string/DoneTasks" />
 
     <Button
         android:id="@+id/bLeftTasks"
-        android:padding="03dp"
-        android:layout_width="fill_parent"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:text="LeftTasks" />
+        android:layout_marginLeft="40sp"
+        android:padding="03dp"
+        android:text="@string/LeftTasks" />
 
 </LinearLayout>

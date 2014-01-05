@@ -1,12 +1,12 @@
 package com.joel_harsh.task_assisstant;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ModifyTasks2 extends Activity implements OnClickListener {
 	TextView tv;
@@ -41,25 +41,25 @@ public class ModifyTasks2 extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		
+
 		String s = getIntent().getExtras().getString(StoreConst.Store);
-		
+
 		if (R.id.bChangeDATEofthistask == ((Button) v).getId()) {
-			// Intent i2 = new Intent( this, ViewTask.class);
-			// startActivity(i2);
-			Toast.makeText(this, "YOUR WORK", Toast.LENGTH_SHORT).show();
+			Intent i2 = new Intent(this, ChangeTaskDate.class);
+			i2.putExtra(StoreConst.Store, s);
+			startActivity(i2);
 		} else if (R.id.bChangePriorityoftask == ((Button) v).getId()) {
-			// Intent i3 = new Intent( this, ModifyTask.class);
-			// startActivity(i3);
-			Toast.makeText(this, "YOUR WORK", Toast.LENGTH_SHORT).show();
+			Intent i3 = new Intent(this, ChangePriority.class);
+			i3.putExtra(StoreConst.Store, s);
+			startActivity(i3);
 		} else if (R.id.bMARKDone == ((Button) v).getId()) {
-			// Intent i4 = new Intent( this, ViewScore.class);
-			// startActivity(i4);
-			Toast.makeText(this, "YOUR WORK", Toast.LENGTH_SHORT).show();
+			Intent i4 = new Intent(this, ChangeDoneStatus.class);
+			i4.putExtra(StoreConst.Store, s);
+			startActivity(i4);
 		} else if (R.id.bREMoveTASk == ((Button) v).getId()) {
-			// Intent i4 = new Intent( this, ViewScore.class);
-			// startActivity(i4);
-			Toast.makeText(this, "YOUR WORK", Toast.LENGTH_SHORT).show();
+			Intent i5 = new Intent(this, DeleteTask.class);
+			i5.putExtra(StoreConst.Store, s);
+			startActivity(i5);
 		}
 
 	}

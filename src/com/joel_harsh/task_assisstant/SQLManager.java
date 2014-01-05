@@ -40,9 +40,22 @@ public class SQLManager extends SQLiteOpenHelper {
 		// Lite- no upgradation of Tables needed in this project
 	}
 
+	public static boolean istaskPresent(String tName) {
+		SQLiteDatabase db = sqlObj.getWritableDatabase();
+		long r = DatabaseUtils.longForQuery(db, "SELECT count(*) FROM "
+				+ StoreConst.TABLENAME + " WHERE " + StoreConst.NAME + " = '"
+				+ tName + "'", null);
+		db.close();
+		if (r > 0)
+			return true;
+		else
+			return false;
+
+	}
+
 	public static void newTask(String tName, String tDate, String tPr) {
-		
-		SQLiteDatabase db = sqlObj.getWritableDatabase();//this.getWritableDatabase();
+
+		SQLiteDatabase db = sqlObj.getWritableDatabase();
 		// Inserting Row
 		db.execSQL("INSERT INTO " + StoreConst.TABLENAME + "('"
 				+ StoreConst.NAME + "', '" + StoreConst.DATE + "', '"
@@ -55,16 +68,17 @@ public class SQLManager extends SQLiteOpenHelper {
 	public Cursor getTaskByName(int status) {
 
 		SQLiteDatabase db = this.getReadableDatabase();
-		/*
-		 * Cursor cursor = db.query(StoreConst.TABLENAME, null,
-		 * StoreConst.STATUS + "= " + status, null, StoreConst.NAME, null,
-		 * " "+StoreConst.NAME+" ASC");
-		 */
-		Cursor cursor = db.rawQuery("SELECT * FROM " + StoreConst.TABLENAME,
-				null);
-		// + " WHERE " + StoreConst.STATUS + "= " + status
+
+		Cursor cursor = db.query(StoreConst.TABLENAME, null, StoreConst.STATUS
+				+ "= " + status, null, null, null, " " + StoreConst.NAME
+				+ " ASC");
+
+		// Cursor cursor = db.rawQuery("SELECT * FROM " + StoreConst.TABLENAME,
+		// null);
+		// / + " WHERE " + StoreConst.STATUS + "= " + status
 		// + " ORDER BY "
 		// + StoreConst.NAME + " ASC", null);
+		// db.close();
 		return cursor;
 	}
 
@@ -72,93 +86,110 @@ public class SQLManager extends SQLiteOpenHelper {
 
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor = db.query(StoreConst.TABLENAME, null, StoreConst.STATUS
-				+ "= " + status, null, StoreConst.DATE, null, "'"
-				+ StoreConst.DATE + "' DESC");
+				+ "= " + status, null, null, null, StoreConst.DATE);
+		// db.close();
 		return cursor;
 	}
 
 	public Cursor getTaskByPr(int status) {
 
 		SQLiteDatabase db = this.getReadableDatabase();
-		Cursor cursor = db.query(StoreConst.TABLENAME, null, StoreConst.STATUS
-				+ "= " + status, null, StoreConst.PR, null, "'" + StoreConst.PR
-				+ "' DESC");
-
+		Cursor cursor = db
+				.query(StoreConst.TABLENAME,
+						null,
+						StoreConst.STATUS + "= " + status,
+						null,
+						null,
+						null,
+						"CASE "
+								+ StoreConst.PR
+								+ " WHEN 'High' THEN 0 WHEN 'Medium' THEN 1 WHEN 'Low' THEN 2 END");
+		// db.close();
 		return cursor;
 	}
 
 	public void clearDataBase() {
 		SQLiteDatabase db = this.getWritableDatabase();
 		db.execSQL("DELETE FROM " + StoreConst.TABLENAME);
+		db.close();
 	}
-	
-	public long getTasksDoneCount()
-	{
-		
+
+	public long getTasksDoneCount() {
+
 		SQLiteDatabase db = this.getReadableDatabase();
-		return DatabaseUtils.longForQuery(db, "SELECT count(*) FROM "+StoreConst.TABLENAME+" WHERE "+ StoreConst.STATUS + " = 1", null);
+		long r = DatabaseUtils.longForQuery(db,
+				"SELECT count(*) FROM " + StoreConst.TABLENAME + " WHERE "
+						+ StoreConst.STATUS + " = 1", null);
+		db.close();
+		return r;
 	}
-	
-	public long getTasksLeftCount()
-	{
-		
+
+	public long getTasksLeftCount() {
+
 		SQLiteDatabase db = this.getReadableDatabase();
-		return DatabaseUtils.longForQuery(db, "SELECT count(*) FROM "+StoreConst.TABLENAME+" WHERE "+ StoreConst.STATUS + " = 0", null);
+		long r = DatabaseUtils.longForQuery(db,
+				"SELECT count(*) FROM " + StoreConst.TABLENAME + " WHERE "
+						+ StoreConst.STATUS + " = 0", null);
+		db.close();
+		return r;
 	}
-	
-	public long getTasksDoneOnGivenDayCount(String s)
-	{
-		
+
+	public long getTasksDoneOnGivenDayCount(String s) {
+
 		SQLiteDatabase db = this.getReadableDatabase();
-		return DatabaseUtils.longForQuery(db, "SELECT count(*) FROM "+StoreConst.TABLENAME+" WHERE "+ StoreConst.STATUS + " = 1 AND "+StoreConst.DATE+" = '"+s+"'", null);
+		long r = DatabaseUtils.longForQuery(db, "SELECT count(*) FROM "
+				+ StoreConst.TABLENAME + " WHERE " + StoreConst.STATUS
+				+ " = 1 AND " + StoreConst.DATE + " = '" + s + "'", null);
+		db.close();
+		return r;
 	}
-	
-	public long getTasksLeftOnGivenDayCount(String s)
-	{
-		
+
+	public long getTasksLeftOnGivenDayCount(String s) {
+
 		SQLiteDatabase db = this.getReadableDatabase();
-		return DatabaseUtils.longForQuery(db, "SELECT count(*) FROM "+StoreConst.TABLENAME+" WHERE "+ StoreConst.STATUS + " = 0 AND "+StoreConst.DATE+" = '"+s+"'", null);
+		long r = DatabaseUtils.longForQuery(db, "SELECT count(*) FROM "
+				+ StoreConst.TABLENAME + " WHERE " + StoreConst.STATUS
+				+ " = 0 AND " + StoreConst.DATE + " = '" + s + "'", null);
+		db.close();
+		return r;
 	}
-	
-	/*
-	 * public void clearData() { SQLiteDatabase db = this.getWritableDatabase();
-	 * db.execSQL("UPDATE " + StoreConst.TABLENAME + " SET " +
-	 * StoreConst.RADIOBN + " = null, " + StoreConst.RADIOGRP + " = null, " +
-	 * StoreConst.SPINNER + " = null, " + StoreConst.DATEPICKER + " = null, " +
-	 * StoreConst.CALENDARVIEW + " = null, " + StoreConst.CHECKBOX +
-	 * " = null WHERE " + StoreConst.UNAME + " = '" + currUser + "'");
-	 * db.close(); }
-	 * 
-	 * public void addDate(String s) { if (currUser != null) {
-	 * 
-	 * SQLiteDatabase db = this.getWritableDatabase(); db.execSQL("UPDATE " +
-	 * StoreConst.TABLENAME + " SET " + StoreConst.DATEPICKER + " = '" + s +
-	 * "' WHERE " + StoreConst.UNAME + " = '" + currUser + "'"); db.close(); //
-	 * Closing database connection } }
-	 * 
-	 * public void addCheck(String s) { if (currUser != null) { SQLiteDatabase
-	 * db = this.getWritableDatabase(); db.execSQL("UPDATE " +
-	 * StoreConst.TABLENAME + " SET " + StoreConst.CHECKBOX + " = '" + s +
-	 * "' WHERE " + StoreConst.UNAME + " = '" + currUser + "'"); db.close(); } }
-	 * 
-	 * public void addRadioBn(String s) { if (currUser != null) { SQLiteDatabase
-	 * db = this.getWritableDatabase(); db.execSQL("UPDATE " +
-	 * StoreConst.TABLENAME + " SET " + StoreConst.RADIOBN + " = '" + s +
-	 * "' WHERE " + StoreConst.UNAME + " = '" + currUser + "'"); db.close(); } }
-	 * 
-	 * public void addRadioGrp(String s) { if (currUser != null) {
-	 * SQLiteDatabase db = this.getWritableDatabase(); db.execSQL("UPDATE " +
-	 * StoreConst.TABLENAME + " SET " + StoreConst.RADIOGRP + " = '" + s +
-	 * "' WHERE " + StoreConst.UNAME + " = '" + currUser + "'"); db.close(); } }
-	 * 
-	 * public void addSpinner(String s) { if (currUser != null) { SQLiteDatabase
-	 * db = this.getWritableDatabase(); db.execSQL("UPDATE " +
-	 * StoreConst.TABLENAME + " SET " + StoreConst.SPINNER + " = '" + s +
-	 * "' WHERE " + StoreConst.UNAME + " = '" + currUser + "'"); db.close(); } }
-	 * 
-	 * public void addCal(String s) { if (currUser != null) { SQLiteDatabase db
-	 * = this.getWritableDatabase(); db.execSQL("UPDATE " + StoreConst.TABLENAME
-	 * + " SET " + StoreConst.CALENDARVIEW + " = '" + s + "' WHERE " +
-	 * StoreConst.UNAME + " = '" + currUser + "'"); db.close(); } }
-	 */
+
+	public void updateDate(String s, String d) {
+		SQLiteDatabase db2 = this.getWritableDatabase();
+		db2.execSQL("UPDATE " + StoreConst.TABLENAME + " SET "
+				+ StoreConst.DATE + " = '" + d + "' WHERE " + StoreConst.NAME
+				+ " = '" + s + "'");
+		db2.close();
+
+	}
+
+	public void updatePR(String s, String p) {
+		SQLiteDatabase db2 = this.getWritableDatabase();
+		db2.execSQL("UPDATE " + StoreConst.TABLENAME + " SET " + StoreConst.PR
+				+ " = '" + p + "' WHERE " + StoreConst.NAME + " = '" + s + "'");
+		db2.close();
+
+	}
+
+	public void markAsDone(String s) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.execSQL("UPDATE " + StoreConst.TABLENAME + " SET "
+				+ StoreConst.STATUS + " = " + 1 + " WHERE " + StoreConst.NAME
+				+ " = '" + s + "'");
+		db.close();
+
+	}
+
+	public void deleteTask(String s) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.execSQL("DELETE FROM " + StoreConst.TABLENAME + " WHERE "
+				+ StoreConst.NAME + " = '" + s + "'");
+		db.close();
+	}
+
+	public static void deleteALL() { // DANGER!! TESTING ONLY!!
+		SQLiteDatabase db = sqlObj.getWritableDatabase();
+		db.execSQL("DELETE FROM " + StoreConst.TABLENAME);
+		db.close();
+	}
 }

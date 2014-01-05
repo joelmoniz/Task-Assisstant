@@ -29,7 +29,7 @@ public class MainActivity extends Activity implements OnClickListener {
 															// of SQLManager,
 															// creating the
 															// database
-       
+		
 		button_ct.setOnClickListener(this);
 		button_vt.setOnClickListener(this);
 		button_mt.setOnClickListener(this);

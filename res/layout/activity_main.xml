@@ -10,31 +10,47 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:textColor="@color/green"
+        android:textColor="@color/red"
+        android:textAlignment="center"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
         android:textSize="40sp" />
 
     <Button
         android:id="@+id/bVT"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/View_Task" />
+        android:text="@string/View_Task" 
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        />
 
     <Button
         android:id="@+id/bCT"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Create_Task" />
+        android:text="@string/Create_Task" 
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+       />
 
     <Button
         android:id="@+id/bMT"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Modify_Task" />
+        android:text="@string/Modify_Task" 
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+       />
 
     <Button
         android:id="@+id/bVS"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/View_Score" />
+        android:text="@string/View_Score" 
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+       />
 
 </LinearLayout>

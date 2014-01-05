@@ -39,11 +39,11 @@ public class LeftTasks extends Activity implements OnClickListener {
 
 		Intent i8 = new Intent(this, DisplayTaskList.class);
 		i8.putExtra(StoreConst.DoStatus, 0);
-		if (R.id.bViewbyName == ((Button) vvv).getId()) {
+		if (R.id.bViewbyNamelft == ((Button) vvv).getId()) {
 			i8.putExtra(StoreConst.SortBy, StoreConst.NAME);
-		} else if (R.id.bViewbydt == ((Button) vvv).getId()) {
+		} else if (R.id.bViewbydtlft == ((Button) vvv).getId()) {
 			i8.putExtra(StoreConst.SortBy, StoreConst.DATE);
-		} else if (R.id.bViewbypr == ((Button) vvv).getId()) {
+		} else if (R.id.bViewbyprlft == ((Button) vvv).getId()) {
 			i8.putExtra(StoreConst.SortBy, StoreConst.PR);
 
 		}

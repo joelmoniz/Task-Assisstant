@@ -8,18 +8,24 @@
          android:id="@+id/tVCreatetsk"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:layout_marginLeft="5dp"
          android:text="@string/CREATE_TASKS" />
 
     <TextView
         android:id="@+id/tVtskName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
         android:text="@string/TaskName" />
 
     <EditText
         android:id="@+id/eTtskname"
         android:inputType="text"
-        android:layout_width="240sp"
+        android:layout_width="240dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="25dp"
         android:layout_height="wrap_content"
         android:ems="10" 
         >
@@ -31,24 +37,32 @@
         android:id="@+id/tVTskDt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
         android:text="@string/task_dead" />
 
     <EditText
         android:id="@+id/eTtskDt"
-        android:layout_width="240sp"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
         android:ems="10"
+        android:hint="@string/dateconfig"
         android:inputType="date" />
 
     <TextView
         android:id="@+id/tVtskPriority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
         android:text="@string/TaskPriority" />
 
     <RadioGroup
         android:id="@+id/rGPr"
         android:layout_width="wrap_content"
+        android:layout_marginLeft="25dp"
         android:layout_height="wrap_content" >
 
         <RadioButton
@@ -78,7 +92,7 @@
         android:id="@+id/bAddTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100sp"
+        android:layout_marginLeft="100dp"
         android:text="@string/ADD" />
 
 </LinearLayout>

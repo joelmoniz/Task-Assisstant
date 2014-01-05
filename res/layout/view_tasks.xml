@@ -9,25 +9,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/which"
-        android:layout_marginLeft="3sp"
-        android:layout_marginTop="15sp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="15dp"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
         android:id="@+id/bDoneTasks"
-        android:layout_width="200sp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="40sp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
         android:padding="03dp"
         android:text="@string/DoneTasks" />
 
     <Button
         android:id="@+id/bLeftTasks"
-        android:layout_width="200sp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40sp"
+        android:layout_marginLeft="40dp"
         android:padding="03dp"
         android:text="@string/LeftTasks" />
 

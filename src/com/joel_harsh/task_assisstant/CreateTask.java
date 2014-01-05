@@ -1,8 +1,7 @@
 package com.joel_harsh.task_assisstant;
 
-
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -50,13 +49,13 @@ public class CreateTask extends Activity implements OnClickListener,
 		// TODO Auto-generated method stub
 		switch (arg1) {
 		case R.id.rPRhigh:
-			Toast.makeText(this, "HIGH PR", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "High Priority", Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.rPRmed:
-			Toast.makeText(this, "MED PR", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "Medium Priority", Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.rPRlow:
-			Toast.makeText(this, "LOW PR", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "Low Priority", Toast.LENGTH_SHORT).show();
 			break;
 		}
 
@@ -66,7 +65,7 @@ public class CreateTask extends Activity implements OnClickListener,
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
 
-		String rId=null;
+		String rId = null;
 		switch (rg.getCheckedRadioButtonId()) {
 		case R.id.rPRhigh:
 			rId = "High";
@@ -84,11 +83,19 @@ public class CreateTask extends Activity implements OnClickListener,
 				&& ed2.getText().toString() != ""
 				&& ed1.getText().toString() != null
 				&& ed2.getText().toString() != null) {
-			//manager.
-			SQLManager.newTask(ed1.getText().toString(), ed2.getText().toString(),
-					rId);
+			if (SQLManager.istaskPresent(ed1.getText().toString())) {
+				Toast.makeText(
+						this,
+						"You have already added that task. Change the name and try again.",
+						Toast.LENGTH_SHORT).show();
+			} else {
+				SQLManager.newTask(ed1.getText().toString(), ed2.getText()
+						.toString(), rId);
 
-			Toast.makeText(this, "Task Added!!", Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, "Task Added!!", Toast.LENGTH_SHORT).show();
+				Intent i = new Intent(this,MainActivity.class);
+				startActivity(i);
+			}
 		}
 
 		else {

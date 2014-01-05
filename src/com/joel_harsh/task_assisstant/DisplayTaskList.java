@@ -4,20 +4,27 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class DisplayTaskList extends Activity {
+public class DisplayTaskList extends Activity implements OnClickListener{
 
 	LinearLayout linearLayout;
 	SharedPreferences prefs;
 	SQLManager manager;
 	TextView t1;
+	Button back;
+	
 	private ArrayList<HashMap<String, String>> list;
 
 	@Override
@@ -28,17 +35,24 @@ public class DisplayTaskList extends Activity {
 		manager = SQLManager.createObject(getApplicationContext());
 
 		ListView lview = (ListView) findViewById(R.id.listview);
+		back = (Button)findViewById(R.id.goBack);
+		back.setOnClickListener(this);
 
 		Cursor c=null;
 		int status = getIntent().getExtras().getInt(StoreConst.DoStatus);
-
-		if (getIntent().getExtras().getString(StoreConst.SortBy) == StoreConst.NAME) {
+		String s = getIntent().getExtras().getString(StoreConst.SortBy);
+		if(s!=null)
+		{
+		if (s.equals(StoreConst.NAME)) {
 			c = manager.getTaskByName(status);
-		} else if (getIntent().getExtras().getString(StoreConst.SortBy) == StoreConst.DATE) {
+		} else if (s.equals(StoreConst.DATE)) {
 			c = manager.getTaskByDate(status);
 		} else {
 			c = manager.getTaskByPr(status);
 		}
+		}
+		else
+			Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
 
 		populateListView(c, status);
 
@@ -82,6 +96,13 @@ public class DisplayTaskList extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.view_task_by_name, menu);
 		return true;
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		Intent i = new Intent(this,MainActivity.class);
+		startActivity(i);
 	}
 
 }

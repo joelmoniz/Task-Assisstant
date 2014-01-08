@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.joel_harsh.task_assisstant"
+    package="com.joel_harsh.task_assistant"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -14,11 +14,11 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.joel_harsh.task_assisstant.MainActivity"
+            android:name="com.joel_harsh.task_assistant.MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.CreateTask"
+            android:name="com.joel_harsh.task_assistant.CreateTask"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.CREATETASK" />
@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.ViewTask"
+            android:name="com.joel_harsh.task_assistant.ViewTask"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEWTASK" />
@@ -36,7 +36,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.ModifyTask"
+            android:name="com.joel_harsh.task_assistant.ModifyTask"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MODIFYTASK" />
@@ -45,7 +45,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.ViewScore"
+            android:name="com.joel_harsh.task_assistant.ViewScore"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEWSCORE" />
@@ -54,7 +54,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.DoneTasks"
+            android:name="com.joel_harsh.task_assistant.DoneTasks"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.DONETASKS" />
@@ -63,7 +63,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.LeftTasks"
+            android:name="com.joel_harsh.task_assistant.LeftTasks"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.LEFTTASKS" />
@@ -72,7 +72,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.ModifyTasks2"
+            android:name="com.joel_harsh.task_assistant.ModifyTasks2"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MODIFYTASKS2" />
@@ -81,7 +81,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.ViewScore2"
+            android:name="com.joel_harsh.task_assistant.ViewScore2"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEWSCORE2" />
@@ -90,32 +90,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.SQLManager"
-            android:label="@string/title_activity_sqlmanager" >
+            android:name="com.joel_harsh.task_assistant.SQLManager"
+            android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.DisplayTaskList"
-            android:label="@string/title_activity_view_task_by_name" >
+            android:name="com.joel_harsh.task_assistant.DisplayTaskList"
+            android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.ChangeTaskDate"
-            android:label="@string/title_activity_change_task_date" >
+            android:name="com.joel_harsh.task_assistant.ChangeTaskDate"
+            android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.ChangePriority"
-            android:label="@string/title_activity_change_priority" >
+            android:name="com.joel_harsh.task_assistant.ChangePriority"
+            android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.ChangeDoneStatus"
-            android:label="@string/title_activity_change_done_status" >
+            android:name="com.joel_harsh.task_assistant.ChangeDoneStatus"
+            android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.DeleteTask"
-            android:label="@string/title_activity_delete_task" >
+            android:name="com.joel_harsh.task_assistant.DeleteTask"
+            android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.joel_harsh.task_assisstant.SplashScreen"
-            android:label="@string/title_activity_splash_screen" >
+            android:name="com.joel_harsh.task_assistant.SplashScreen"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

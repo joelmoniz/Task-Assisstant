@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Task Assisstant</string>
+    <string name="app_name">Task Assistant</string>
     <string name="hello_world">WorkMate ;) </string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_sqlmanager">Task Assisstant</string>

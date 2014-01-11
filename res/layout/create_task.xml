@@ -3,32 +3,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
-     <TextView
-         android:id="@+id/tVCreatetsk"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="10dp"
-         android:layout_marginLeft="5dp"
-         android:text="@string/CREATE_TASKS" />
+
+    <TextView
+        android:id="@+id/tVCreatetsk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/CREATE_TASKS" />
 
     <TextView
         android:id="@+id/tVtskName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
         android:text="@string/TaskName" />
 
     <EditText
         android:id="@+id/eTtskname"
-        android:inputType="text"
         android:layout_width="240dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="25dp"
         android:layout_height="wrap_content"
-        android:ems="10" 
-        >
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="text" >
 
         <requestFocus />
     </EditText>
@@ -37,11 +36,12 @@
         android:id="@+id/tVTskDt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
         android:text="@string/task_dead" />
 
-    <EditText
+    <!--
+         <EditText
         android:id="@+id/eTtskDt"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
@@ -49,21 +49,27 @@
         android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="@string/dateconfig"
-        android:inputType="date" />
+        android:inputType="dat" /> -->>
+
+    <DatePicker
+        android:id="@+id/datePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:calendarViewShown="false" />
 
     <TextView
         android:id="@+id/tVtskPriority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
         android:text="@string/TaskPriority" />
 
     <RadioGroup
         android:id="@+id/rGPr"
         android:layout_width="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp" >
 
         <RadioButton
             android:id="@+id/rPRhigh"
@@ -85,7 +91,6 @@
             android:layout_height="wrap_content"
             android:text="@string/LowPriority"
             android:textColor="@color/green" />
-
     </RadioGroup>
 
     <Button

@@ -53,12 +53,12 @@ public final class R {
         public static final int bViewbyprlft=0x7f0a001f;
         public static final int button1=0x7f0a0009;
         public static final int button2=0x7f0a0008;
+        public static final int datePicker1=0x7f0a0015;
         public static final int eTcurrentScore=0x7f0a002c;
         public static final int eTtaskDonepercent=0x7f0a002e;
         public static final int eTtaskleftpercent=0x7f0a0030;
         public static final int eTtodaysDone=0x7f0a0036;
         public static final int eTtodaysleft=0x7f0a0038;
-        public static final int eTtskDt=0x7f0a0015;
         public static final int eTtskname=0x7f0a0013;
         public static final int editText1=0x7f0a0010;
         public static final int etDAte=0x7f0a0033;

@@ -1,5 +1,7 @@
 package com.joel_harsh.task_assistant;
 
+import java.util.Calendar;
+
 import com.joel_harsh.task_assistant.R;
 
 import android.app.Activity;
@@ -8,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.DatePicker.OnDateChangedListener;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -15,12 +19,13 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 
 public class CreateTask extends Activity implements OnClickListener,
-		OnCheckedChangeListener {
+		OnCheckedChangeListener, OnDateChangedListener {
 
 	Button button_save;
 	RadioGroup rg;
 	TextView tv1, tv2, tv3, tv4;
-	EditText ed1, ed2;
+	EditText ed1;
+	DatePicker dp;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +35,8 @@ public class CreateTask extends Activity implements OnClickListener,
 		rg.setOnCheckedChangeListener(this);
 		button_save.setOnClickListener(this);
 
-		// prefs = PreferenceManager
-		// .getDefaultSharedPreferences(getApplicationContext());
+		Calendar calendar = Calendar.getInstance();
+		dp.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH), this);
 	}
 
 	private void getObjects() {
@@ -43,7 +48,8 @@ public class CreateTask extends Activity implements OnClickListener,
 		tv3 = (TextView) findViewById(R.id.tVTskDt);
 		tv4 = (TextView) findViewById(R.id.tVtskPriority);
 		ed1 = (EditText) findViewById(R.id.eTtskname);
-		ed2 = (EditText) findViewById(R.id.eTtskDt);
+		dp = (DatePicker) findViewById(R.id.datePicker1);
+
 	}
 
 	@Override
@@ -82,17 +88,16 @@ public class CreateTask extends Activity implements OnClickListener,
 
 		if (rg.getCheckedRadioButtonId() != -1
 				&& ed1.getText().toString() != ""
-				&& ed2.getText().toString() != ""
-				&& ed1.getText().toString() != null
-				&& ed2.getText().toString() != null) {
+				&& ed1.getText().toString() != null) {
 			if (SQLManager.istaskPresent(ed1.getText().toString())) {
 				Toast.makeText(
 						this,
 						"You have already added that task. Change the name and try again.",
 						Toast.LENGTH_SHORT).show();
 			} else {
-				SQLManager.newTask(ed1.getText().toString(), ed2.getText()
-						.toString(), rId);
+				String date = dp.getYear() + "/" 
+						+ (dp.getMonth() + 1) + "/" + dp.getDayOfMonth() ;
+				SQLManager.newTask(ed1.getText().toString(), date, rId);
 
 				Toast.makeText(this, "Task Added!!", Toast.LENGTH_SHORT).show();
 				Intent i = new Intent(this,MainActivity.class);
@@ -106,20 +111,18 @@ public class CreateTask extends Activity implements OnClickListener,
 				Toast.makeText(this, "Enter Task Name", Toast.LENGTH_SHORT)
 						.show();
 
-		}
-		{
-			if (ed2.getText().toString() == null
-					|| ed2.getText().toString() == null)
-				Toast.makeText(this, "Enter Task DeadLine", Toast.LENGTH_SHORT)
-						.show();
-
-		}
-		{
 			if (rg.getCheckedRadioButtonId() == -1)
 				Toast.makeText(this, "Select Task Priority", Toast.LENGTH_SHORT)
 						.show();
 
 		}
+	}
+
+	@Override
+	public void onDateChanged(DatePicker view, int year, int monthOfYear,
+			int dayOfMonth) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
